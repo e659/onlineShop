@@ -1,0 +1,38 @@
+.Navbar{
+    box-shadow: -6px 1px 20px 1px #f5eaea ;
+    background-color: white !important;
+}
+.navbar .cartLength{
+    background-color: darkmagenta;
+    border-radius: 50px;
+    padding: 1px 7px;
+    font-size: 15px;
+    color: white;
+    position: absolute;
+    left: 87.5%;
+    top: 11%;
+
+} 
+// mediaQuery
+@media  screen and (min-width:320px ) and (max-width:480px){
+    .navbar-brand {
+        font-size: 15px;
+    }
+    .navbar .cartLength{
+        display: none;
+    }
+}
+@media  screen and (min-width:480px ) and (max-width:568px){
+    .navbar-brand {
+        font-size: 15px;
+    }
+    .navbar .cartLength{
+        display: none;
+    }
+}
+@media screen and (min-width:568px) and (max-width:768px){
+
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    
+}

@@ -1,0 +1,120 @@
+.loginLabel{
+    font-size: 17px !important;
+}
+// form span{
+//     color: darkmagenta !important;
+// }
+// checkbox
+input[type="checkbox"]:checked {
+    background: darkmagenta;
+    color: white;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    background: white;
+    height: 18px;
+    width: 18px;
+    border: 1px solid darkmagenta;
+    border-radius: 4px;
+    color: white;
+}
+
+input[type="checkbox"]:after {
+    content: ' ';
+    position: relative;
+    left: 40%;
+    top: 16%;
+    width: 30%;
+    height: 60%;
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    transform: rotate(50deg);
+    display: none;
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+}
+.loginBtn{
+    background-color: darkmagenta !important;
+    color: white !important;
+}
+.loginBtn:hover{
+    background-color: white !important;
+    color: darkmagenta !important;
+    border: 1px solid darkmagenta !important;
+}
+.guestBtn{
+    background-color: white !important;
+    color: darkmagenta !important;
+    border: 1px solid darkmagenta !important;
+}
+.guestBtn:hover{
+    background-color: darkmagenta !important;
+    color: white !important;
+}
+.eyeBtn {
+    position: absolute;
+    top: 49%;
+    left: 90%;
+}
+
+.eyeBtn:hover {
+    border: none !important;
+}
+// mediaQuery
+@media  screen and (min-width:320px ) and (max-width:480px){
+    .registerDiv .regContainer{
+         padding-top: 0px !important;
+    }
+    .registerDiv .regRow{
+        padding-top: 0px !important;
+    }
+    .regRow .loginForm{
+        width: 100% !important;
+    }
+    .eyeBtn {
+        left: 85%;
+    }
+};
+@media  screen and (min-width:480px ) and (max-width:568px){
+    .registerDiv .regContainer{
+        padding-top: 0px !important;
+   }
+   .registerDiv .regRow{
+       padding-top: 0px !important;
+   }
+   .regRow .loginForm{
+       width: 100% !important;
+   }
+   .eyeBtn {
+       left: 85%;
+   }
+};
+@media screen and (min-width:568px) and (max-width:768px){
+    .eyeBtn {
+        left: 80%;
+    }
+    .loginCheck{
+        font-size: 12px !important;
+    }
+    .registerDiv .creatTxt{
+        font-size: 15px !important; 
+    }
+};
+@media screen and (min-width:768px) and (max-width:992px){
+    .eyeBtn {
+        left: 80%;
+    }
+    .loginCheck{
+        font-size: 12px !important;
+    }
+    .registerDiv .creatTxt{
+        font-size: 15px !important; 
+    }
+};

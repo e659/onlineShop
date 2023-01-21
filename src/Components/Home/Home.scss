@@ -1,0 +1,78 @@
+.homeImg img{
+    width: 75% !important;
+}
+.HomeContent :first-child{
+    font-size: 3rem;
+}
+.HomeContentP {
+    font-size: 2rem;
+}
+.HomeContent span{
+    font-size: 3rem;
+    color: darkmagenta;
+}
+.HomeContent button{
+    background-color: darkmagenta;
+    color: white;
+    font-size: 1.2rem;
+}
+.HomeContent .btn:hover{
+    background-color: white !important;
+    color:darkmagenta !important ;
+    border: 1px solid darkmagenta !important;
+}
+@media  screen and (min-width:320px ) and (max-width:480px){
+    .HomeContent :first-child{
+        font-size: 2rem;
+    }
+    .homeImg{
+        padding-top: 15%;
+        margin-left: 10%;
+    }
+    .HomeContentP {
+        font-size: 1.5rem;
+    }
+}
+@media  screen and (min-width:480px ) and (max-width:568px){
+    .HomeContent :first-child{
+        font-size:2.5rem !important;
+    }
+    .homeImg{
+        padding-top: 15%;
+        margin-left: 10%;
+        
+    }
+    .HomeContentP {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (min-width:568px) and (max-width:768px){
+    .HomeContent :first-child{
+        font-size:2rem !important;
+    }
+    .homeImg{
+        padding-top: 12%;
+        
+    }
+    .HomeContentP {
+        font-size: 1.3rem;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .HomeContent :first-child{
+        font-size:2rem !important;
+    }
+    .homeImg{
+        padding-top: 12%;
+        
+    }
+    .HomeContentP {
+        font-size: 1.3rem;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1350px) {
+    .homeImg{
+        padding-top: 10%;
+        
+    }
+}

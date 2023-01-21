@@ -1,0 +1,61 @@
+.signUpLabels{
+    font-size: 17px !important;
+}
+.signUpBtn{
+    background-color: darkmagenta !important;
+
+}
+.signUpBtn:hover{
+    background-color: white !important;
+    color: darkmagenta !important;
+    border: 1px solid darkmagenta !important;
+}
+.eyeBtn {
+    position: absolute;
+    top: 49%;
+    left: 90%;
+   
+}
+
+.eyeBtn:hover {
+    border: none !important;
+}
+// mediaQuery
+@media  screen and (min-width:320px ) and (max-width:480px){
+    .registerDiv .regContainer{
+         padding-top: 0px !important;
+    }
+    .registerDiv .regRow{
+        padding-top: 0px !important;
+    }
+    .regRow .regisForm{
+        width: 100% !important;
+    }
+    .eyeBtn {
+        left: 85%;
+    }
+};
+@media  screen and (min-width:480px ) and (max-width:568px){
+    .registerDiv .regContainer{
+        padding-top: 0px !important;
+   }
+   .registerDiv .regRow{
+       padding-top: 0px !important;
+   }
+   .regRow .regisForm{
+       width: 100% !important;
+   }
+   .eyeBtn {
+       left: 90%;
+   }
+};
+@media screen and (min-width:568px) and (max-width:768px){
+    .eyeBtn {
+        left: 80%;
+    }
+};
+@media screen and (min-width:768px) and (max-width:992px){
+    .eyeBtn {
+        left: 80%;
+    }
+};

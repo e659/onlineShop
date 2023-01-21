@@ -1,0 +1,41 @@
+.cartCard{
+    box-shadow: -6px 1px 20px 1px #f5eaea !important;
+    border-radius: 10px;
+}
+.cartImg p{
+    padding-top: 4.99rem;
+}
+.clearbtn{
+    font-size: 15px !important;
+}
+.clearbtn:hover{
+border: 1px solid darkmagenta !important;
+background-color: white !important;
+color: darkmagenta !important;
+}
+// mediaQuery
+@media  screen and (min-width:320px ) and (max-width:480px){
+ .cartCard{
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+ }
+ .cartCard .cartTitle{
+    font-size: 15px !important;
+ }
+};
+
+@media  screen and (min-width:480px ) and (max-width:568px){
+    .cartCard{
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+     }
+     .cartCard .cartTitle{
+        font-size: 15px !important;
+     }
+};
+// @media screen and (min-width:568px) and (max-width:768px){
+  
+// };
+// @media screen and (min-width:768px) and (max-width:992px){
+ 
+// };

@@ -1,0 +1,61 @@
+.card{
+    box-shadow: -6px 1px 20px 1px #f5eaea !important;
+    border: none !important;
+    height: 450px !important;
+    position: relative !important;
+    border-radius: 50px !important;
+    // background-color: rgb(139, 0, 139,.5) ;
+}
+.card img{
+    // width: 40%;
+    border-radius: 50px 50px 0px !important;
+    transition: all 1s;
+}
+.card button{
+    background-color: darkmagenta !important;
+    color: white !important;
+    width: 80%;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}
+.card:hover img{
+transform: scale(1.2);
+transform: rotatey(20deg);
+}
+.card button:hover{
+    background-color: white !important;
+    color:darkmagenta !important ;
+    border:1px solid darkmagenta !important;
+}
+.loadMore button{
+    background-color: darkmagenta !important;
+    color: white !important;
+    border: 1px solid transparent !important;
+}
+.loadMore button:hover{
+    background-color: white !important;
+    color:darkmagenta !important ;
+    border:1px solid darkmagenta !important;
+}
+// mediaQuery
+@media  screen and (min-width:320px ) and (max-width:480px){
+    .card{
+        height: 450px !important;
+    }
+}
+@media  screen and (min-width:480px ) and (max-width:568px){
+    .card{
+        height: 450px !important;
+    }
+}
+@media screen and (min-width:568px) and (max-width:768px){
+    .card{
+        height: 350px !important;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .card{
+        height: 350px !important;
+    }
+}

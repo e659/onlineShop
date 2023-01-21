@@ -1,0 +1,56 @@
+.footerContainer{
+    background-color: rgba(139, 0, 139);
+    overflow-y: hidden !important;
+}
+.footerSubmitBtn{
+    background-color: white !important;
+    border: 1px solid rgba(139, 0, 139) !important;
+    color: rgba(139, 0, 139) !important;
+    font-weight: 500 !important;
+}
+.footerSubmitBtn:hover{
+    color: black !important;
+}
+.f_list a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+.f_list a:hover{
+    border-bottom: 1px solid black;
+    color: black;
+}
+.f_social_icon a{
+    color: white;
+}
+.f_social_icon a:hover{
+    color: black;
+}
+// media
+@media  screen and (min-width:320px ) and (max-width:480px){
+    .f_social_icon a{
+     font-size: 10px !important;
+    } 
+    .memail{
+        width: 70% !important;
+    }
+    .footerContainer{
+        overflow-y: hidden !important;
+    }
+}
+@media screen and (min-width:568px) and (max-width:768px){
+    .memail{
+        width: 70% !important;
+    }
+    .f_social_icon a{
+        font-size: 15px !important;
+       } 
+}
+@media screen and (min-width:768px) and (max-width:992px){
+    .memail{
+        width: 70% !important;
+    }
+    .f_social_icon a{
+        font-size: 15px !important;
+       } 
+}
