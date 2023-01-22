@@ -10,16 +10,16 @@ import ProductDetails from "./Components/Products/ProductDetails";
 function App() {
   return (
    <>
-   <Header/>
-     <Routes>
-        <Route path="/" element={<HomeContent/>} />
-        <Route path='home' element={<HomeContent/>}></Route>
+     <Header/>
+  <Routes>
+        <Route path="/" element={<HomeContent  />} />
         <Route path='register' element={<Register/>}></Route>
         <Route path='login' element={<Login/>}></Route>
+        <Route path='home' element={<HomeContent/>}></Route>
         <Route path='/product/:productId' element={<ProductDetails/>}></Route>
         <Route path='cart' element={<Cart/>}></Route>
       </Routes>
-      <Footer/>
+  <Footer/>
    </>
   );
 }

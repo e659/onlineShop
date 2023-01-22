@@ -77,7 +77,7 @@ export default function HomeContent() {
   const numberOfItems = showMore ? Products.length : 8;
   return (
     <>
-      <Home />
+      <Home/>
       <div className="container">
         <div className="row py-5">
           {/* <div className="col-md-2"> */}
