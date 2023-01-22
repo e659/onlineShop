@@ -6,6 +6,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import "./Styles/register.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 export default function Register() {
   const [loading, setLoading] = useState(false);
   const [validationErr, setValidationErr] = useState([]);
@@ -33,23 +34,26 @@ export default function Register() {
     setUser(myUser);
     // console.log(myUser);
   }
-  //submitUserData
+  // submitUserData
   async function submitData(e) {
     e.preventDefault();
     let validationResult = validateForm();
     if (validationResult.error) {
       setValidationErr(validationResult.error.details);
-    } else {
+    }
+     else {
       const { data } = await axios
-        .post("https://routeegypt.herokuapp.com/signout", user)
-        .catch((err) => {
-          console.error(err);
-          setErrorMsg("wrong mail or password");
-        });
-      redirectToHome();
+        .post("https://route-movies-api.vercel.app/signout", user);
+        if ( data.message === 'success' ) {
+          redirectToHome();
+        } else {
+          setErrorMsg( data.message );
+        }
+     
       console.log(data);
     }
   }
+ 
   // validation
   function validateForm() {
     const schema = Joi.object({
@@ -78,15 +82,21 @@ export default function Register() {
     return schema.validate(user, { abortEarly: false });
   }
   // redirectToHome
-  const navigate = useNavigate();
-  function redirectToHome() {
-    let path = "/home";
-    navigate(path);
-  }
+  // const navigate = useNavigate();
+  // function redirectToHome() {
+  //   let path = "/home";
+  //   navigate(path);
+  // }
   // redirectToLogin
+  const history = useHistory();
   function redirectToLogin() {
     let path = "/login";
-    navigate(path);
+    history.push(path);
+  }
+
+  function redirectToHome(){
+    let path="/home";
+    history.push(path);
   }
   return (
     <>
@@ -112,13 +122,14 @@ export default function Register() {
                 <div className="br "></div>
               </div>
               {/* errorMsg */}
-              {errorMsg ? (
+              {/* {errorMsg ? (
                 <div className="alert alert-danger p-2 regerrorMsg">
                   {errorMsg}
                 </div>
               ) : (
                 ""
-              )}
+              )} */}
+               { errorMsg ? <div className='text-danger'>{ errorMsg }</div> : '' }
               {validationErr.map((error, index) => (
                 <div key={index} className="alert alert-danger p-2 regerrorMsg">
                   {error.message}

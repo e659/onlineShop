@@ -1,4 +1,4 @@
-import { Route,Routes } from "react-router-dom";
+import { Route,Routes,Switch } from "react-router-dom";
 import './App.css';
 import Cart from "./Components/Cart/Cart";
 import Footer from "./Components/Footer/Footer";
@@ -11,14 +11,33 @@ function App() {
   return (
    <>
      <Header/>
-  <Routes>
-        <Route path="/" element={<HomeContent  />} />
+     <Switch>
+     <Route exact path="/">
+      <HomeContent />
+    </Route>
+    <Route path="/register">
+      <Register/>
+    </Route>
+    <Route path="/login">
+      <Login/>
+    </Route>
+    <Route path="/home">
+      <HomeContent/>
+    </Route>
+    <Route path="/product/:productId">
+      <ProductDetails/>
+    </Route>
+    <Route path="/cart">
+      <Cart/>
+    </Route>
+
+        {/* <Route exact path="/" element={<HomeContent  />} />
         <Route path='register' element={<Register/>}></Route>
         <Route path='login' element={<Login/>}></Route>
         <Route path='home' element={<HomeContent/>}></Route>
         <Route path='/product/:productId' element={<ProductDetails/>}></Route>
-        <Route path='cart' element={<Cart/>}></Route>
-      </Routes>
+        <Route path='cart' element={<Cart/>}></Route> */}
+        </Switch>
   <Footer/>
    </>
   );

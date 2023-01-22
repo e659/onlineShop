@@ -1,5 +1,5 @@
 {
-  "homepage": "http://e659.github.io/onlineShop/home",
+  "homepage": "http://e659.github.io/onlineShop/",
   "name": "online-shop",
   "version": "0.1.0",
   "private": true,
@@ -16,15 +16,15 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.7.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

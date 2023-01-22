@@ -1,7 +1,4 @@
-.Navbar{
-    box-shadow: -6px 1px 20px 1px #f5eaea ;
-    background-color: white !important;
-}
+
 .navbar .cartLength{
     background-color: darkmagenta;
     border-radius: 50px;
@@ -9,7 +6,7 @@
     font-size: 15px;
     color: white;
     position: absolute;
-    left: 87.5%;
+    left: 82%;
     top: 11%;
 
 } 
@@ -18,21 +15,76 @@
     .navbar-brand {
         font-size: 15px;
     }
+    .profileIcon{
+        transform:translateX(10px);
+    }
     .navbar .cartLength{
-        display: none;
+        top:35%;
+        left: 58%;
+    }
+ 
+    .navList{
+        box-shadow: -6px 1px 20px 1px rgb(131, 127, 127) ;
+        background-color: white !important;
+        border-radius: 10px;
+        width: 50%;
     }
 }
 @media  screen and (min-width:480px ) and (max-width:568px){
     .navbar-brand {
         font-size: 15px;
     }
+    .profileIcon{
+        transform:translateX(10px);
+    }
     .navbar .cartLength{
-        display: none;
+        top:35%;
+        left: 56%;
+    }
+ 
+    .navList{
+        box-shadow: -6px 1px 20px 1px rgb(131, 127, 127) ;
+        background-color: white !important;
+        border-radius: 10px;
+        width: 50%;
     }
 }
 @media screen and (min-width:568px) and (max-width:768px){
+    .navbar-brand {
+        font-size: 15px;
+    }
+    .profileIcon{
+        transform:translateX(10px);
+    }
+    .navbar .cartLength{
+        top:35%;
+        left: 55%;
+    }
+ 
+    .navList{
+        box-shadow: -6px 1px 20px 1px rgb(131, 127, 127) ;
+        background-color: white !important;
+        border-radius: 10px;
+        width: 50%;
+    }
 
 }
 @media screen and (min-width:768px) and (max-width:992px){
-    
+    .navbar-brand {
+        font-size: 15px;
+    }
+    .profileIcon{
+        transform:translateX(10px);
+    }
+    .navbar .cartLength{
+        top:35%;
+        left: 54%;
+    }
+ 
+    .navList{
+        box-shadow: -6px 1px 20px 1px rgb(131, 127, 127) ;
+        background-color: white !important;
+        border-radius: 10px;
+        width: 50%;
+    }
 }

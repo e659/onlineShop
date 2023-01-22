@@ -5,6 +5,11 @@ import { BsSearch } from "react-icons/bs";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 export default function Header() {
   // cartCount
   const cartLength = useSelector((state) =>
@@ -13,7 +18,41 @@ export default function Header() {
   // console.log(cartLength)
   return (
     <>
-      <nav
+  <Navbar  expand="lg" 
+  className="fixed-top "
+  style={{ backgroundColor: "white" }}
+  >
+      <Container>
+        <Navbar.Brand href="#home"> Online Shop</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto navList">
+            <Nav.Link href="#cart"
+            style={{ color: "black",cursor: "pointer" }}
+            >
+            <AiOutlineShoppingCart
+                    size={25}
+                    className="mx-3 position-relative"
+                    style={{ color: "black",cursor: "pointer" }}
+                  />
+                     Cart
+                  <span className="cartLength">{cartLength}</span>
+                
+            </Nav.Link>
+            <Nav.Link href=""
+            style={{ color: "black",cursor: "pointer" }}
+            >
+            <CgProfile
+            className="profileIcon mx-2"
+             size={25} style={{ cursor: "pointer",color: "black" }} />
+             Profile
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
+      {/* <nav
         className="navbar navbar-expand-lg fixed-top"
         style={{ backgroundColor: "white" }}
       >
@@ -49,7 +88,7 @@ export default function Header() {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> */}
     </>
   );
 }

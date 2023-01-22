@@ -6,6 +6,7 @@ import "./Styles/login.scss";
 import Joi from "joi";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const [validationErr, setValidationErr] = useState([]);
@@ -37,22 +38,24 @@ export default function Login() {
     let validationResult = validateForm();
     if (validationResult.error) {
       setValidationErr(validationResult.error.details);
-    } else {
+      // console.log(validationResult.error.details)
+    } else  {
       const { data } = await axios
-        .post("https://routeegypt.herokuapp.com/signin", user)
-        .catch((err) => {
-          console.error(err);
-          setErrorMsg("wrong mail or password");
-        });
-      redirectToHome();
+        .post("https://route-movies-api.vercel.app/signin", user);
+        if ( data.message === 'success' ) {
+          redirectToHome();
+        } else {
+          setErrorMsg( data.message );
+        }
+     
       console.log(data);
     }
   }
   // redirectToHome
-  const navigate = useNavigate();
+  const history = useHistory();
   function redirectToHome() {
     let path = "/home";
-    navigate(path);
+    history.push(path);
   }
   // validation
   function validateForm() {
@@ -90,6 +93,7 @@ export default function Login() {
               {errorMsg ? (
                 <div className="alert alert-danger p-2 regerrorMsg">
                   {errorMsg}
+
                 </div>
               ) : (
                 ""
