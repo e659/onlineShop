@@ -24,35 +24,37 @@ export default function Register() {
   const [user, setUser] = useState({
     email: "",
     password: "",
-    mobileNumber: "",
-    birthDate: "",
+    fName: "",
+    LName:"",
+    age: "",
   });
   // getFormValues
   function getFormData(e) {
     const myUser = { ...user };
     myUser[e.target.name] = e.target.value;
     setUser(myUser);
-    // console.log(myUser);
-  }
+    console.log(myUser);
+  };
   // submitUserData
-  async function submitData(e) {
-    e.preventDefault();
+async function submitData(e){
+  e.preventDefault();
     let validationResult = validateForm();
     if (validationResult.error) {
       setValidationErr(validationResult.error.details);
-    }
-     else {
+      // console.log(validationResult.error.details)
+    } else  {
       const { data } = await axios
-        .post("https://route-movies-api.vercel.app/signout", user);
-        if ( data.message === 'success' ) {
+        .post("https://route-movies-api.vercel.app/signup", user);
+        if ( data.message ==='success' ) {
+         
           redirectToHome();
         } else {
           setErrorMsg( data.message );
         }
-     
-      console.log(data);
+        console.log(data);
+    
     }
-  }
+}
  
   // validation
   function validateForm() {
@@ -76,17 +78,13 @@ export default function Register() {
           "string.pattern.base": `"password" should have at least one lower,upper letters and at least one digit`,
           "any.required": `"password" is a required field`,
         }),
-      mobileNumber: Joi.required(),
-      birthDate: Joi.required(),
+        LName: Joi.required(),
+      fName: Joi.required(),
+      age:Joi.required()
     });
     return schema.validate(user, { abortEarly: false });
   }
-  // redirectToHome
-  // const navigate = useNavigate();
-  // function redirectToHome() {
-  //   let path = "/home";
-  //   navigate(path);
-  // }
+
   // redirectToLogin
   const history = useHistory();
   function redirectToLogin() {
@@ -122,20 +120,60 @@ export default function Register() {
                 <div className="br "></div>
               </div>
               {/* errorMsg */}
-              {/* {errorMsg ? (
+              {errorMsg ? (
                 <div className="alert alert-danger p-2 regerrorMsg">
                   {errorMsg}
                 </div>
               ) : (
                 ""
-              )} */}
-               { errorMsg ? <div className='text-danger'>{ errorMsg }</div> : '' }
+              )}
+              
               {validationErr.map((error, index) => (
-                <div key={index} className="alert alert-danger p-2 regerrorMsg">
+                <div key={index} className="alert alert-danger p-2 regerrorMsg ">
                   {error.message}
                 </div>
               ))}
               <form onSubmit={submitData} className="row g-3 w-75 regisForm">
+              <div className="col-md-6 ">
+                  <label
+                    htmlFor="fristname"
+                    className="form-label signUpLabels"
+                  >
+                    Frist Name
+                  </label>
+                  <span style={{ color: "darkmagenta" }} className="px-1">
+                    *
+                  </span>
+                  <input
+                    onChange={getFormData}
+                    type="text"
+                    className="form-control"
+                    name="fName"
+                    id="fristname"
+                    placeholder="FristName"
+                    required
+                  ></input>
+                </div>
+                <div className="col-md-6 ">
+                  <label
+                    htmlFor="lastname"
+                    className="form-label signUpLabels"
+                  >
+                    Last Name
+                  </label>
+                  <span style={{ color: "darkmagenta" }} className="px-1">
+                    *
+                  </span>
+                  <input
+                    onChange={getFormData}
+                    type="text"
+                    className="form-control"
+                    name="LName"
+                    id="lastname"
+                    placeholder="LastName"
+                    required
+                  ></input>
+                </div>
                 <div className="col-md-12 ">
                   <label
                     htmlFor="inputEmail4"
@@ -182,12 +220,12 @@ export default function Register() {
                     onClick={togglePassword}
                   >
                     {passwordType === "password" ? (
-                      <AiOutlineEye
+                      <AiOutlineEyeInvisible
                         size={15}
                         style={{ color: "darkmagenta" }}
                       />
                     ) : (
-                      <AiOutlineEyeInvisible
+                      <AiOutlineEye
                         size={15}
                         style={{ color: "darkmagenta" }}
                       />
@@ -200,7 +238,7 @@ export default function Register() {
                     htmlFor="inputNumber"
                     className="form-label signUpLabels"
                   >
-                    Mobile Number
+                    Age
                   </label>
                   <span style={{ color: "darkmagenta" }} className="px-1">
                     *
@@ -208,31 +246,13 @@ export default function Register() {
                   <input
                     onChange={getFormData}
                     type="number"
-                    name="mobileNumber"
+                    name="age"
                     className="form-control"
-                    id="inputPhoneNumber"
+                    id="inputage"
                     required
                   ></input>
                 </div>
-                <div className="col-md-12">
-                  <label
-                    htmlFor="inputNumber"
-                    className="form-label signUpLabels"
-                  >
-                    Birthday Date
-                  </label>
-                  <span style={{ color: "darkmagenta" }} className="px-1">
-                    *
-                  </span>
-                  <input
-                    onChange={getFormData}
-                    type="date"
-                    name="birthDate"
-                    className="form-control"
-                    id="inputBirthDate"
-                    required
-                  ></input>
-                </div>
+             
 
                 <div className="col-md-12 py-3">
                   <button
@@ -247,7 +267,17 @@ export default function Register() {
                     )}
                   </button>
                 </div>
+                
               </form>
+              <div className="col-md-12 btn  guestBtn">
+              <Link
+                      style={{ textDecoration: "none",color: "darkmagenta"}}
+                      to="home"
+                    >
+                     continue as a guest
+                    </Link>
+              
+                </div>
             </div>
             <div className="col-md-5  imgContainer">
               <img

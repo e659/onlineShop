@@ -1,7 +1,6 @@
 import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { CgProfile } from "react-icons/cg";
-import { BsSearch } from "react-icons/bs";
+import {AiOutlineLogout } from "react-icons/ai";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -39,14 +38,27 @@ export default function Header() {
                   <span className="cartLength">{cartLength}</span>
                 
             </Nav.Link>
-            <Nav.Link href=""
+ <Nav.Link href="#logOut"
+ className="logOutLink ms-4 fs-6 px-3"
+            style={{ color: "white",cursor: "pointer" }}
+            >
+                 <AiOutlineLogout
+                    size={25}
+                    className=" position-relative "
+                    style={{ color: "white",cursor: "pointer" }}
+                  />
+             LogOut
+            </Nav.Link>
+
+
+            {/* <Nav.Link href=""
             style={{ color: "black",cursor: "pointer" }}
             >
             <CgProfile
             className="profileIcon mx-2"
              size={25} style={{ cursor: "pointer",color: "black" }} />
              Profile
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

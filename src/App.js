@@ -13,7 +13,7 @@ function App() {
      <Header/>
      <Switch>
      <Route exact path="/">
-      <HomeContent />
+     <Register/>
     </Route>
     <Route path="/register">
       <Register/>

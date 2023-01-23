@@ -6,10 +6,23 @@
     font-size: 15px;
     color: white;
     position: absolute;
-    left: 82%;
+    left: 80%;
     top: 11%;
 
 } 
+.logOutLink{
+    background-color:darkmagenta ;
+    border-radius: 20px;
+    
+}
+.logOutLink:hover{
+    background-color: white;
+    border: 1px solid darkmagenta;
+    color: darkmagenta !important;
+}
+.logOutLink:hover svg{
+    color: darkmagenta !important;
+}
 // mediaQuery
 @media  screen and (min-width:320px ) and (max-width:480px){
     .navbar-brand {

@@ -42,13 +42,14 @@ export default function Login() {
     } else  {
       const { data } = await axios
         .post("https://route-movies-api.vercel.app/signin", user);
-        if ( data.message === 'success' ) {
+        if ( data.message ==='success' ) {
+         
           redirectToHome();
         } else {
           setErrorMsg( data.message );
         }
-     
-      console.log(data);
+        console.log(data);
+    
     }
   }
   // redirectToHome
@@ -148,9 +149,9 @@ export default function Login() {
                     onClick={togglePassword}
                   >
                     {passwordType === "password" ? (
-                      <AiOutlineEye size={15} />
+                      <AiOutlineEyeInvisible size={15}  style={{ color: "darkmagenta" }}/>
                     ) : (
-                      <AiOutlineEyeInvisible size={15} />
+                      <AiOutlineEye  size={15}  style={{ color: "darkmagenta" }}/>
                     )}
                   </button>
                 </div>
@@ -194,8 +195,9 @@ export default function Login() {
                     )}
                   </button>
                 </div>
-                <div className="col-md-12">
-                  <button type="submit" className="btn w-100 guestBtn">
+                {/* <div className="col-md-12">
+                  <button 
+                  type="submit" className="btn w-100 guestBtn">
                     continue as a guest
                   </button>
                 </div>
@@ -209,9 +211,30 @@ export default function Login() {
                       create An account
                     </Link>
                   </h2>
-                </div>
+                </div> */}
               </form>
+              <div className="col-md-12 btn  guestBtn">
+              <Link
+                      style={{ textDecoration: "none",color: "darkmagenta"}}
+                      to="home"
+                    >
+                     continue as a guest
+                    </Link>
+              
+                </div>
+                <div className="col-md-12 pt-4">
+                  <h2 className="creatTxt fs-3">
+                    Not registered yet?{" "}
+                    <Link
+                      style={{ textDecoration: "none", color: "darkmagenta" }}
+                      to="register"
+                    >
+                      create An account
+                    </Link>
+                  </h2>
+                </div>
             </div>
+            
 
             <div className="col-md-6  loginImgContainer">
               <img src={login} alt="" className="img-fluid login_img" />
