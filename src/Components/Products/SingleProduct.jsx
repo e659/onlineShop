@@ -7,10 +7,6 @@ import "./styles/singleProduct.scss";
 export default function SingleProduct({ prod }) {
   const Products = useSelector((state) => state.allProducts.products);
   const Product = useSelector((state) => state.product);
-  // console.log(Products);
-  const [showMore, setShowMore] = useState(false);
-  const numberOfItems = showMore ? Products.length : 4;
-
   return (
     <>
       <div className="card " style={{ cursor: "pointer" }}>
@@ -38,33 +34,21 @@ export default function SingleProduct({ prod }) {
             >
               {prod.category}
             </p>
+          
             <p
               className="price"
               style={{ fontSize: "18px", fontWeight: "500" }}
             >
               ${prod.price}
             </p>
+            
+         
+           
           </div>
         </Link>
       </div>
 
-      {/* <div className="loadMore d-flex justify-content-center pt-5">
-        {showMore ? (
-          <button
-            onClick={() => setShowMore(!showMore)}
-            className="btn btn-outline-primary"
-          >
-            Load less
-          </button>
-        ) : (
-          <button
-            onClick={() => setShowMore(!showMore)}
-            className="btn btn-outline-primary"
-          >
-            Load more
-          </button>
-        )}
-      </div> */}
+    
     </>
   );
 }

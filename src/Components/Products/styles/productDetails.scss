@@ -10,6 +10,8 @@
 }
 .photoSide  img{
     border-radius: 50px;
+    width: 50% !important;
+    height: 70% !important;
 }
 .detailsCardRow{
     border: 1px solid #f5eaea;
@@ -35,11 +37,15 @@
     width: 100%;
     font-size: 15px !important;
     font-weight: 500 !important;
-    // padding:10px 2px 2px !important;
+   
 }
 .AddToCartBtn ul{
     list-style-type: none !important;
    transform: translateY(7px);
+}
+.photoSide  img{
+    width: 50% !important;
+    height: 90% !important;
 }
 // mediaQuery
 @media  screen and (min-width:320px ) and (max-width:480px){

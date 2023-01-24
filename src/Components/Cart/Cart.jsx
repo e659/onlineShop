@@ -88,7 +88,13 @@ export default function Cart() {
                         >
                           {product.quantity}
                         </span>
-                        <button
+                        {product.quantity<1? (
+                             <button   
+                             disabled
+                             className="btn QuantityBtn"
+                             >-</button>
+                            ) : (
+                            <button
                           onClick={() =>
                             dispatch({
                               type: "DECREASE",
@@ -98,7 +104,20 @@ export default function Cart() {
                           className="btn QuantityBtn"
                         >
                           -
-                        </button>
+                        </button> 
+              )}
+                        
+                        {/* <button
+                          onClick={() =>
+                            dispatch({
+                              type: "DECREASE",
+                              payload: product.id,
+                            })
+                          }
+                          className="btn QuantityBtn"
+                        >
+                          -
+                        </button> */}
                       </div>
                     </div>
                     <div className="col-6">

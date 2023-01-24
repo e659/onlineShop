@@ -35,44 +35,8 @@ export default function HomeContent() {
     if (productId && productId !== "") fetchProductDetail(productId);
   }, [productId]);
   const Products = useSelector((state) => state.allProducts.products);
-  // console.log(Products);
+  console.log(Products);
 
-  const [state, setState] = useState({
-    Products,
-    filters: new Set(),
-  });
-  console.log(state.Products);
-  const handleFilterChange = useCallback(
-    (event) => {
-      setState((previousState) => {
-        let filters = new Set(previousState.filters);
-        let products = Products;
-
-        if (event.target.checked) {
-          filters.add(event.target.value);
-        } else {
-          filters.delete(event.target.value);
-        }
-
-        if (filters.size) {
-          products = products.filter((product) => {
-            return filters.has(product.category);
-          });
-        }
-
-        return {
-          filters,
-          products,
-        };
-      });
-    },
-    [setState]
-  );
-  const transformProducts = () => {
-    let sortedProducts = Products;
-    console.log(sortedProducts);
-    return sortedProducts;
-  };
   const [showMore, setShowMore] = useState(false);
   const numberOfItems = showMore ? Products.length : 8;
   return (
@@ -92,11 +56,29 @@ export default function HomeContent() {
           </div> */}
           <div className="col-md-12">
             <div className="row gy-3">
-              {transformProducts().map((prod) => (
+              {Products.slice(0, numberOfItems)
+              .map((prod) => (
                 <div className="col-md-3" key={prod.id}>
                   <SingleProduct prod={prod} key={prod.id} />
                 </div>
               ))}
+              <div className="loadMore d-flex justify-content-center pt-5">
+        {showMore ? (
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="btn btn-outline-primary"
+          >
+            Load less
+          </button>
+        ) : (
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="btn btn-outline-primary"
+          >
+            Load more
+          </button>
+        )}
+      </div>
             </div>
           </div>
         </div>

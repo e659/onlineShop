@@ -36,25 +36,25 @@ export default function ProductDetails() {
       <div className="container py-5">
         <div className="row py-5 detailsCardRow">
           <div className="col-md-5  photoSide d-flex justify-content-center">
-            <img src={Product.image} alt="" className="img-fluid w-50" />
+            <img src={Product.image} alt="" className="img-fluid w-25" />
           </div>
           <div className="col-md-7 pt-5 px-5 detailsSide ">
             <p className="fs-4" style={{ color: "#2f3031" }}>
               Category: {Product.category}
             </p>
-            <p className="fs-2" style={{ color: "#2f3031", fontWeight: "400" }}>
+            <p className="fs-4" style={{ color: "#2f3031", fontWeight: "400" }}>
               {Product.title}
             </p>
-            <p className="fs-5" style={{ color: "#606263" }}>
+            <p className="fs-6" style={{ color: "#606263" }}>
               {Product.description}
             </p>
             <p
-              className="fs-2 pt-4"
+              className="fs-4 pt-4"
               style={{ color: "#2f3031", fontWeight: "400" }}
             >
-              ${Product.price}
+              {Product.price}$
             </p>
-            <div className="info d-flex justify-content-between pt-3">
+            {/* <div className="info d-flex justify-content-between pt-3">
               <div className="Quantity">
                 <p
                   className="fs-5"
@@ -77,7 +77,7 @@ export default function ProductDetails() {
                   className="px-2 fs-4"
                   style={{ color: "#2f3031", fontWeight: "400" }}
                 >
-                  5
+                 
                 </span>
                 <button
                   onClick={() =>
@@ -106,7 +106,7 @@ export default function ProductDetails() {
                   1500$
                 </p>
               </div>
-            </div>
+            </div> */}
 
             <button
               onClick={addToCart}

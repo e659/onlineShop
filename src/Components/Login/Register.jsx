@@ -26,7 +26,7 @@ export default function Register() {
     password: "",
     fName: "",
     LName:"",
-    age: "",
+    age: ""
   });
   // getFormValues
   function getFormData(e) {
@@ -123,11 +123,11 @@ async function submitData(e){
               {errorMsg ? (
                 <div className="alert alert-danger p-2 regerrorMsg">
                   {errorMsg}
+
                 </div>
               ) : (
                 ""
               )}
-              
               {validationErr.map((error, index) => (
                 <div key={index} className="alert alert-danger p-2 regerrorMsg ">
                   {error.message}
